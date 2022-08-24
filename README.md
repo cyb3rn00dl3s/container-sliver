@@ -16,14 +16,16 @@ This container basically automates the recommended installation process without 
 
 I've also attached a docker compose file for even quicker and lazier deployments!
 
-The sliver applications run as uid 10000 within the container. So make sure that any volumes that you want to mount are also accessible by the sliver user within the container (chown'ed or chmod'ed on the outside!)
+The sliver applications run as uid 10000 within the container. Make sure that any volumes that you want to mount are also accessible by the sliver user within the container (chown'ed or chmod'ed on the outside!)
+
+Of course,**Pull Requests** are always welcome.
 
 ## Usage
 
 Build the image:
 
 ```sh
-git clone $REPO_URL
+git clone https://github.com/cyb3rn00dl3s/container-sliver.git
 cd container-sliver
 docker build -t sliver .
 ```
