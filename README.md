@@ -2,7 +2,7 @@
 
 ## Warning
 
-**Disclaimer**: This image is just a quick lazy hack. It is yet to be battle-tested (write me about your experience in the discussions!)! If you do decide to use this container I only take responsibility in your successes and not in your failures or any damages that occur while using this container!
+**Disclaimer**: This image is just a quick lazy hack. It is yet to be battle-tested (write me about your experience in the discussions!)! If you do decide to use this container I only take responsibility for your successes and not for your failures or any damages that occur while using this container!
 
 ## Description
 
@@ -22,7 +22,13 @@ Of course,**Pull Requests** are always welcome.
 
 ## Usage
 
-Build the image:
+Pull the image from the Github registry:
+
+```sh
+docker pull ghcr.io/cyb3rn00dl3s/container-sliver:latest
+```
+
+..or build the image yourself:
 
 ```sh
 git clone https://github.com/cyb3rn00dl3s/container-sliver.git

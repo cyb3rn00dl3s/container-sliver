@@ -1,12 +1,14 @@
-FROM debian:latest
+FROM debian:bullseye
 
 LABEL maintainer="@cyb3rn00dl3s <https://github.com/cyb3rn00dl3s>"
+
+ENV DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true
 
 # Create sliver user & group
 RUN useradd --uid 10000 -m -s /usr/sbin/nologin -U sliver
 
 # Update & install required packages
-RUN apt update && apt full-upgrade -y && apt install -y curl gpg build-essential mingw-w64 binutils-mingw-w64 g++-mingw-w64
+RUN apt update && apt install --no-install-recommends -y curl ca-certificates gnupg2 build-essential mingw-w64 binutils-mingw-w64 g++-mingw-w64 && rm -rf /var/lib/apt/lists/* && apt clean && apt autoremove
 
 # Metasploit (optional) dependency -- this will make the container CHONKY
 RUN mkdir /opt/install
