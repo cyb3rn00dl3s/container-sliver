@@ -13,9 +13,10 @@ services:
     logging:
       driver: json-file
       options:
-        max-size: 5g
+        max-size: 500m
         max-file: "10"
     ports:
+      - 53:53
       - 80:80
       - 443:443
       - 8443:31337

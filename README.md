@@ -39,12 +39,12 @@ docker build -t sliver .
 Run sliver as daemon (with multiplayer port):
 
 ```sh
-docker run --name sliver_server -p 80:80 -p 443:443 -p 31337:31337 --security-opt="no-new-privileges:true" --cap-drop=ALL --cap-add=SETFCAP --cap-add=NET_BIND_SERVICE --cap-add=NET_RAW -d sliver daemon
+docker run --name sliver_server -p 53:53 -p 80:80 -p 443:443 -p 31337:31337 --security-opt="no-new-privileges:true" --cap-drop=ALL --cap-add=SETFCAP --cap-add=NET_BIND_SERVICE --cap-add=NET_RAW -d sliver daemon
 ```
 
 Run sliver as daemon; attach volumes for different files:
 ```sh
-docker run --name sliver_server -p 80:80 -p 443:443 -p 31337:31337 \
+docker run --name sliver_server p 53:53 -p 80:80 -p 443:443 -p 31337:31337 \
  -v $(pwd)/configs:/configs \
  -v $(pwd)/phishlets:/phishlets \
  -v $(pwd)/payloads:/payloads \
@@ -64,7 +64,7 @@ docker exec -it sliver_server sliver
 
 Run a temporary server without additional security measures interactively:
 ```sh
-docker run --rm -p 80:80 -p 443:443 -it sliver
+docker run --rm -p 53:53 -p 80:80 -p 443:443 -it sliver
 ```
 
 ## FAQ
@@ -79,6 +79,5 @@ docker run --rm -p 80:80 -p 443:443 -it sliver
 
 - Find out why generating a new implant can sometimes end in a rpc error?
 - Write commands (or build instructions) for server and operator configurations
-- MiniJail profile ;-;
 - Add questions to FAQ if there are any
 - Add more TODOs

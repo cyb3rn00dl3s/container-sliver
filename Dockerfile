@@ -31,6 +31,6 @@ RUN mkdir -p /home/sliver/.sliver-client/configs
 RUN /usr/local/bin/server operator --name sliver --lhost localhost --save /home/sliver/.sliver-client/configs
 
 # Some nice docker settings :)
-EXPOSE 80 443 31337
+EXPOSE 53 80 443 31337
 STOPSIGNAL SIGQUIT
 ENTRYPOINT [ "/usr/local/bin/server" ]
