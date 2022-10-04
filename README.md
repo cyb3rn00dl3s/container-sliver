@@ -14,6 +14,8 @@ This container basically automates the recommended installation process without 
 2. Install Metasploit nightly (following the [official documentation](https://docs.metasploit.com/docs/using-metasploit/getting-started/nightly-installers.html))
 3. Install sliver with code ripped from the [official Linux install script](https://github.com/BishopFox/sliver/wiki/Linux-Install-Script)
 
+The Github package is automatically rebuild every week, so it should __in theory__ automatically update to the latest sliver version.
+
 I've also attached a docker compose file for even quicker and lazier deployments!
 
 The sliver applications run as uid 10000 within the container. Make sure that any volumes that you want to mount are also accessible by the sliver user within the container (chown'ed or chmod'ed on the outside!)
